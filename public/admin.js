@@ -1,6 +1,6 @@
 async function admin(){
 // retrieve a list of books from server
-const bookListResponse = await fetch ( 'http://localhost.3001/listBooks');
+const bookListResponse = await fetch ( 'http://localhost:3001/listBooks');
 const bookList = await bookListResponse.json();
 
 // display list of book titles to admin
@@ -24,7 +24,7 @@ bookList.forEach(book => {
     button.type = 'button';
     button.value = 'Save';
     button.addEventListener('click', async() => {
-        await fetch('http://localhost:2001/updateBook', {
+        await fetch('http://localhost:3001/updateBook', {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
